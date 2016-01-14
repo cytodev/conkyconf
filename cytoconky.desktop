@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=CytoConky
+GenericName=CytoConky
+Comment=Start conky
+Categories=Utility;System;
+Exec=sh "/home/cytodev/conkyconf/conky_launcher.sh"
+Terminal=false
+StartupNotify=false
+Type=Application
