@@ -1,0 +1,57 @@
+################################################################################
+#                             conky  configuration                             #
+# memory_rc                                                                    #
+# by CytoDev                                                                  ☠#
+#==============================================================================#
+#                                   Settings                                   #
+#------------------------------------------------------------------------------#
+alignment top_right
+background yes
+cpu_avg_samples 1
+default_color 0096FA
+default_bar_size 239 8
+default_outline_color FA9600
+default_shade_color 000000
+double_buffer yes
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+gap_x 0
+gap_y 462
+maximum_width 240
+minimum_size 300
+no_buffers yes
+override_utf8_locale no
+own_window yes
+own_window_argb_value 180
+own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type normal
+pad_percents 3
+total_run_times 0
+update_interval 1
+uppercase no
+use_spacer left
+use_xft yes
+xftalpha 1
+xftfont monospace:size=8
+#------------------------------------------------------------------------------#
+#                                   Templates                                  #
+#------------------------------------------------------------------------------#
+template0 CORE\1: ${cpu cpu\1}% ${cpubar cpu\1}
+#------------------------------------------------------------------------------#
+#                                    Output                                    #
+################################################################################
+
+TEXT
+${font monospace:bold:size=8}#
+${color FA9600}MEMORY ${hr}${color }
+
+RAM ${alignc} ${mem} / ${memmax} ${alignr} ${memperc}%
+${membar}
+VRAM ${alignc} ${exec nvidia-smi -q -g 0 2>&1 | grep -A 2 -i "FB Memory Usage" | grep -i Used | tail -1 | awk '{print $3}'}MiB / ${exec nvidia-smi -q -g 0 2>&1 | grep -A 2 -i "FB Memory Usage" | grep -i Total | tail -1 | awk '{print $3}'}MiB ${alignr} ${exec nvidia-smi -q -g 0 2>&1 | grep -A 2 -i utilization | grep -i gpu | tail -1 | awk '{printf "% 3d", $3}'}%
+${execbar nvidia-smi -q -g 0 2>&1 | grep -A 2 -i utilization | grep -i gpu | tail -1 | awk '{printf "% 3d", $3}'}
+SWAP ${alignc} ${swap} / ${swapmax} ${alignr} ${swapperc}%
+${swapbar}

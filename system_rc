@@ -1,0 +1,49 @@
+################################################################################
+#                             conky  configuration                             #
+# system_rc                                                                    #
+# by CytoDev                                                                   #
+#==============================================================================#
+#                                   Settings                                   #
+#------------------------------------------------------------------------------#
+alignment top_right
+background yes
+cpu_avg_samples 1
+default_color 0096FA
+default_bar_size 239 8
+default_outline_color FA9600
+default_shade_color 000000
+double_buffer yes
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+gap_x 0
+gap_y 28
+maximum_width 240
+minimum_size 300
+no_buffers yes
+override_utf8_locale no
+own_window yes
+own_window_argb_value 180
+own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type normal
+pad_percents 3
+total_run_times 0
+update_interval 60
+uppercase no
+use_spacer left
+use_xft yes
+xftalpha 1
+xftfont monospace:size=8
+#------------------------------------------------------------------------------#
+#                                    Output                                    #
+################################################################################
+
+TEXT
+${font monospace:bold:size=8}#
+${color FA9600}SYSTEM ${hr}${color }
+
+UPTIME:${alignr}${uptime_short}
+ENTROPY:${alignr}${entropy_perc}%

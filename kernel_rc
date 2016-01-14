@@ -1,0 +1,46 @@
+################################################################################
+#                             conky  configuration                             #
+# kernel_rc                                                                    #
+# by CytoDev                                                                   #
+#==============================================================================#
+#                                   Settings                                   #
+#------------------------------------------------------------------------------#
+alignment top_left
+background yes
+cpu_avg_samples 2
+default_color FA9600
+default_outline_color FA9600
+default_shade_color 000000
+double_buffer yes
+draw_borders yes
+draw_graph_borders yes
+draw_outline no
+draw_shades yes
+gap_x 0
+gap_y 28
+max_text_width 236
+minimum_size 1660 999
+maximum_width 1660
+no_buffers yes
+override_utf8_locale no
+own_window yes
+own_window_argb_value 180
+own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type normal
+pad_percents 3
+text_buffer_size 2048
+total_run_times 0
+update_interval 1
+uppercase no
+use_spacer left
+use_xft yes
+xftalpha 1
+xftfont monospace:size=8
+#------------------------------------------------------------------------------#
+#                                    Output                                    #
+################################################################################
+
+TEXT
+${color fafafa}${exec dmesg | tail -n71}
