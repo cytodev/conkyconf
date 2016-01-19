@@ -11,7 +11,7 @@ Side bar elements:
 
 ## usage
  1. clone this repo via SSH (`git clone git@github.com:CytoDev/conkyconf.git`)  
-    or HTTPS (`https://github.com/CytoDev/conkyconf.git`)
+    or HTTPS (`git clone https://github.com/CytoDev/conkyconf.git`)
  2. edit conky_launcher.sh and set `DIR` to point to the location of the downloaded repo
  3. edit cytoconky.desktop to point to the conky_launcher.sh script
  4. place cytoconky.desktop in a folder that gets read by your DE's launchermenu
