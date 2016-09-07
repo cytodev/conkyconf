@@ -63,5 +63,6 @@ ${template0 4}${exec awk '/cpu MHz/{i++}i==5{printf "% 5d",$4; exit}' /proc/cpui
 ${template0 5}${exec awk '/cpu MHz/{i++}i==6{printf "% 5d",$4; exit}' /proc/cpuinfo}MHz
 ${template0 6}${exec awk '/cpu MHz/{i++}i==7{printf "% 5d",$4; exit}' /proc/cpuinfo}MHz
 ${template0 7}${exec awk '/cpu MHz/{i++}i==8{printf "% 5d",$4; exit}' /proc/cpuinfo}MHz
-GPU:   ${exec nvidia-smi -q -g 0 2>&1 | grep -A 2 -i utilization | grep -i gpu | tail -1 | awk '{printf "% 3d", $3}'}% ${execbar nvidia-smi -q -g 0 2>&1 | grep -A 2 -i utilization | grep -i gpu | tail -1 | awk '{printf "% 3d", $3}'}${exec nvidia-smi -q -g 0 2>&1 | grep -A 2 -i '^[[:space:]]\{4\}Clocks$' | grep -i Graphics | tail -1 | awk '{printf "% 5d%s", $3, $4}'}
 ]]
+-- temporary move this line out until the [[:space:]] problem is fixed.
+-- GPU:   ${exec nvidia-smi -q -g 0 2>&1 | grep -A 2 -i utilization | grep -i gpu | tail -1 | awk '{printf "% 3d", $3}'}% ${execbar nvidia-smi -q -g 0 2>&1 | grep -A 2 -i utilization | grep -i gpu | tail -1 | awk '{printf "% 3d", $3}'}${exec nvidia-smi -q -g 0 2>&1 | grep -A 2 -i '^[[:space:]]\{4\}Clocks$' | grep -i Graphics | tail -1 | awk '{printf "% 5d%s", $3, $4}'}
