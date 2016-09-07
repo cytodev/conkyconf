@@ -1,51 +1,57 @@
-################################################################################
-#                             conky  configuration                             #
-# storage_rc                                                                   #
-# by CytoDev                                                                   #
-#==============================================================================#
-#                                   Settings                                   #
-#------------------------------------------------------------------------------#
-alignment top_right
-background yes
-cpu_avg_samples 1
-default_color 0096FA
-default_bar_size 239 8
-default_outline_color FA9600
-default_shade_color 000000
-double_buffer yes
-draw_borders no
-draw_graph_borders yes
-draw_outline no
-draw_shades no
-gap_x 0
-gap_y 672
-maximum_width 240
-minimum_size 300
-no_buffers yes
-override_utf8_locale no
-own_window yes
-own_window_argb_value 180
-own_window_argb_visual yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_transparent yes
-own_window_type normal
-pad_percents 3
-total_run_times 0
-update_interval 60
-uppercase no
-use_spacer left
-use_xft yes
-xftalpha 1
-xftfont monospace:size=8
-#------------------------------------------------------------------------------#
-#                                   Templates                                  #
-#------------------------------------------------------------------------------#
-template0 \1${alignc}${fs_used \2} / ${fs_size \2}${alignr}${fs_used_perc \2}%
-#------------------------------------------------------------------------------#
-#                                    Output                                    #
-################################################################################
+-- ########################################################################## --
+--                            conky  configuration                            --
+-- storage_rc                                                                 --
+-- by CytoDev                                                                 --
+-- ========================================================================== --
+--                                   Settings                                 --
+-- -------------------------------------------------------------------------- --
+conky.config = {
+    alignment              = "top_right",
+    background             = true,
+    cpu_avg_samples        = 1,
+    default_bar_height     = 8,
+    default_bar_width      = 239,
+    default_color          = "0096FA",
+    default_outline_color  = "FA9600",
+    default_shade_color    = "000000",
+    double_buffer          = true,
+    draw_borders           = false,
+    draw_graph_borders     = true,
+    draw_outline           = false,
+    draw_shades            = false,
+    font                   = "monospace:size=8",
+    format_human_readable  = true,
+    gap_x                  = 0,
+    gap_y                  = 672,
+    maximum_width          = 240, -- forces window to have a width of 240.
+    minimum_width          = 240, -- forces window to have a width of 240.
+    no_buffers             = true,
+    override_utf8_locale   = false,
+    own_window             = true,
+    own_window_argb_value  = 180,
+    own_window_argb_visual = true,
+    own_window_class       = "Conky", -- default
+    own_window_hints       = "undecorated,below,sticky,skip_taskbar,skip_pager",
+    own_window_transparent = true,
+    own_window_type        = "normal", -- default
+    pad_percents           = 3,
+    total_run_times        = 0,
+    update_interval        = 60,
+    uppercase              = false,
+    use_spacer             = "left",
+    use_xft                = true,
+    xftalpha               = 1,
 
-TEXT
+-- -------------------------------------------------------------------------- --
+--                                  Templates                                 --
+-- -------------------------------------------------------------------------- --
+	template0 = [[\1${alignc}${fs_used \2} / ${fs_size \2}${alignr}${fs_used_perc \2}%]]
+}
+
+-- -------------------------------------------------------------------------- --
+--                                     Output                                 --
+-- ########################################################################## --
+conky.text = [[
 ${font monospace:bold:size=8}#
 ${color FA9600}STORAGE ${hr}${color }
 
@@ -65,3 +71,4 @@ ${if_mounted /tmp}#
 ${template0 tmp /tmp}
 ${fs_bar /tmp}#
 ${endif}
+]]
