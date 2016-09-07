@@ -67,6 +67,10 @@ ${if_mounted /usr}#
 ${template0 usr /usr}
 ${fs_bar /usr}#
 ${endif}
+${if_mounted /var}#
+${template0 var /var}
+${fs_bar /var}#
+${endif}
 ${if_mounted /tmp}#
 ${template0 tmp /tmp}
 ${fs_bar /tmp}#
